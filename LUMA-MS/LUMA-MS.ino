@@ -70,6 +70,8 @@ void loop() {
     display.display();
 
     display.clearDisplay();
+
+    delay(2000);
     
     while (central.connected()) {
  
@@ -137,6 +139,8 @@ void loop() {
       }
       delay(1);  
     }
+
+    
     
     digitalWrite(4, LOW);
     digitalWrite(3, LOW);
