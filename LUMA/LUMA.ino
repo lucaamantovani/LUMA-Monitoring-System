@@ -300,7 +300,7 @@ void setup() {
 
   display.begin(SSD1306_SWITCHCAPVCC, DISPLAY_Address);
   display.clearDisplay(); //for Clearing the display
-  display.drawBitmap(0, 0, Luma_Logo, 128, 64, WHITE); // display.drawBitmap(x position, y position, bitmap data, bitmap width, bitmap height, color)
+  display.drawBitmap(0, 0, Luma_Logo, 128, 64, WHITE);
   display.display();
 
   pinMode(9, INPUT); //for L0+
@@ -310,26 +310,21 @@ void setup() {
   pinMode(3, OUTPUT);
 
   Serial.print("BLE Initialization...");
-  if (!BLE.begin()) {
+  if (!BLE.begin()){
     Serial.println("FAILED!");
     for(;;);
   }else{
     Serial.println("SUCCESS!");
   }
 
-  // set the local name peripheral advertises
   BLE.setLocalName("LUMA Monitoring System");
   
-  // set the UUID for the service this peripheral advertises
   BLE.setAdvertisedService(ecgService);
-
-  // add the characteristic to the service
+  
   ecgService.addCharacteristic(ecgCharacteristic);
 
-  // add service
   BLE.addService(ecgService);
 
-  // initial value
   ecgCharacteristic.setValue(0);
 
   BLE.advertise();
@@ -337,8 +332,8 @@ void setup() {
   Serial.println(("Bluetooth device active, waiting for connections..."));
 
   delay(2000);
-  display.clearDisplay(); //for Clearing the display
-  display.drawBitmap(0, 0, BLE_enabled, 128, 64, WHITE); // display.drawBitmap(x position, y position, bitmap data, bitmap width, bitmap height, color)
+  display.clearDisplay();
+  display.drawBitmap(0, 0, BLE_enabled, 128, 64, WHITE); 
   display.display();
 
 }
@@ -349,16 +344,14 @@ void loop() {
   
   if (central) {
     
-    display.clearDisplay(); //for Clearing the display
-    display.drawBitmap(0, 0, BLE_connected, 128, 64, WHITE); // display.drawBitmap(x position, y position, bitmap data, bitmap width, bitmap height, color)
+    display.clearDisplay();
+    display.drawBitmap(0, 0, BLE_connected, 128, 64, WHITE);
     display.display();
     
     Serial.print("Connected to central: ");
     
-    // print the central's BT address:
     Serial.println(central.address());
     
-    // turn on the LED to indicate the connection:
     digitalWrite(LED_BUILTIN, HIGH);
 
     display.clearDisplay();
