@@ -139,9 +139,6 @@ void loop() {
       }
       delay(1);  
     }
-
-    
-    
     digitalWrite(4, LOW);
     digitalWrite(3, LOW);
     display.clearDisplay(); //for Clearing the display
