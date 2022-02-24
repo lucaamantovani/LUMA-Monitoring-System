@@ -1,5 +1,6 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
+
 #include <Wire.h>
 #include <ArduinoBLE.h>
 
@@ -7,7 +8,6 @@
 #define UpperThreshold 650
 #define LowerThreshold 530
 
-// 'LUMA_LOGO', 128x64px
 const unsigned char Luma_Logo [] PROGMEM = {
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
@@ -367,19 +367,18 @@ void loop() {
  
       int value = 0;
     
-      if ((digitalRead(8) == 1) || (digitalRead(9) == 1)){     
-        
-        //Serial.println("NaN");
-        
+      if ((digitalRead(8) == 1) || (digitalRead(9) == 1))
+      {     
+        Serial.println("NaN");
       } else {
         
         if(a > 127)
-        {  
+        {
           display.clearDisplay();
           a = 0;
           lasta = a; 
         }
-     
+        
         ThisTime = millis();
         int value = analogRead(0);
         display.setTextColor(WHITE);
@@ -388,7 +387,8 @@ void loop() {
         lastb = b;
         lasta = a;
         
-        if (value>UpperThreshold) {
+        if (value>UpperThreshold)
+        {
           
           if (BeatComplete)
           {  
@@ -398,6 +398,7 @@ void loop() {
             BeatComplete=false;
             tone(8,1000,250);
           }
+          
           if(BPMTiming==false)
           {
             LastTime=millis();
@@ -409,15 +410,16 @@ void loop() {
         if ((value<LowerThreshold)&(BPMTiming)) 
           BeatComplete=true;
 
-        if(BPM>100 || BPM<45){
+        if(BPM>100 || BPM<45)
+        {
           digitalWrite(3, HIGH);
           digitalWrite(4, LOW);
         }else{ 
           digitalWrite(4, HIGH);
           digitalWrite(3, LOW); 
         }
+        
         ecgCharacteristic.writeValue(BPM);
-       
         display.writeFillRect(0,50,128,16,BLACK);
         display.setCursor(0,50);
         display.print("BPM:");
@@ -425,12 +427,11 @@ void loop() {
         display.setCursor(50,50);
         display.print("LUMA IoT MS");
         display.display();
-        
         a++;
-        //Serial.println(analogRead(A0));
       }
       delay(1);  
     }
+    
     digitalWrite(4, LOW);
     digitalWrite(3, LOW);
     display.clearDisplay(); //for Clearing the display
