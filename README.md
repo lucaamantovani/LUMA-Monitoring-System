@@ -5,7 +5,7 @@ Device programmed using the Arduino NANO 33 IoT development board.
 The program combine **Bluetooth Low Energy (BLE)** for data exchange, **AD8232** for heart monitoring and **Adafruit monitor** for display trend and BPM value.
 
 ## Instruction
-Download the repositorie
+Download the repository
 ```
  $ git clone https://github.com/lucaamantovani/LUMA-Monitoring-System
 ```
