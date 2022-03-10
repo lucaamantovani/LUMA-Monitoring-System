@@ -7,7 +7,7 @@ The program combine **Bluetooth Low Energy (BLE)** for data exchange, **AD8232**
 ## Instruction
 Download the repo
 ```
- git clone https://github.com/lucaamantovani/LUMA-Monitoring-System
+ $ git clone https://github.com/lucaamantovani/LUMA-Monitoring-System
 ```
 Open Arduino IDE and click on `Tools` and select `Boards Manager`.
 
