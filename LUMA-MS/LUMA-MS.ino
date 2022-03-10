@@ -141,7 +141,7 @@ void loop() {
     }
     digitalWrite(4, LOW);
     digitalWrite(3, LOW);
-    display.clearDisplay(); //for Clearing the display
+    display.clearDisplay();
     display.drawBitmap(0, 0, Warning, 128, 64, WHITE);
     display.display();  
   }
