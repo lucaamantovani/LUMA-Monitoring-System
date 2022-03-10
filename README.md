@@ -25,4 +25,6 @@ Upload the sketch and have fun!
 
 > https://adafruit.github.io/Adafruit_SSD1306/html/index.html
 
+> https://docs.arduino.cc/hardware/nano-33-iot
+
 
