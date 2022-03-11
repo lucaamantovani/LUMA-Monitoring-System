@@ -9,7 +9,7 @@ Download the repository
 ```
  $ git clone https://github.com/lucaamantovani/LUMA-Monitoring-System
 ```
-Open Arduino IDE and click on `Tools` and select `Boards Manager`.
+Open Arduino IDE, click on `Tools` and select `Boards Manager`.
 
 Search and install the `Arduino SAMD Boards (32-bits ARM Cortex-M0+)` package.
 
