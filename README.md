@@ -17,6 +17,11 @@ Into the `Tools` window, select the `Arduino NANO 33 IoT` board and the correct 
 
 Upload the sketch and have fun!
 
+## Circuit Diagram
+
+![alt text](Circuito_.png)
+
+
 ## Useful Resources
 
 > https://components101.com/modules/ad8232-ecg-module
