@@ -1,4 +1,4 @@
-# LUMA Monitoring System
+# LUMA Healt-Status Monitoring System
 
 Device programmed using the Arduino NANO 33 IoT development board.
 
