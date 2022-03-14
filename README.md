@@ -19,7 +19,7 @@ Upload the sketch and have fun!
 
 ## Circuit Diagram
 
-![alt text](LUMA-MS/Circuito_.png)
+![alt text](LUMA-MS/Circuit_Diagram.png)
 
 
 ## Useful Resources
